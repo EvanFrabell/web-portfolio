@@ -1,0 +1,362 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+html, body {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    background-color: #4f67ff;
+   }
+
+li, a {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+.logo {
+    max-width: 200px;
+    height: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .logo {
+        cursor: pointer;
+        max-width: 50%;
+        height: auto;
+        padding: 2% 0% 0% 1%;
+    }
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 7% 30px 1%;
+    border-bottom-style: solid;
+    border-bottom-color: #fff;
+    border-bottom-width: 2px;  
+}
+
+nav a:hover {
+    color: black;
+}
+
+.nav_links {
+    list-style: none;
+    padding: 0;
+}
+
+.nav_links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+@media only screen and (max-width: 1043px) {
+    nav {
+        display: block;
+        justify-content: center;
+        padding: 0% 2% 0% 1%;
+    }
+    .nav_links li {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        display: block;
+        justify-content: center;
+        padding: 0% 2% 0% 1%;
+    }
+    .nav_links li {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.contact {
+    display: inline-block;
+}
+
+.linkedin {
+    max-width: 60px;
+    height: auto;
+}
+
+.github {
+    max-width: 60px;
+    height: auto;
+    padding-left: 1px;
+}
+
+@media only screen and (max-width: 1043px) {
+    .linkedin, .github {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .linkedin, .github {
+        display: none;
+    }
+}
+
+content {
+    position: fixed;
+    bottom:0px;
+}
+
+/* MAIN */
+
+h1 {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    text-shadow: 3px 2px #ff0000;
+    text-align: center;
+}
+
+.face {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+    .face {
+        width: 100%;
+    }
+}
+
+/* PROJECTS */
+
+.proj-block {
+    display: block;
+    text-align: center;
+
+}
+
+.proj-block ul {
+    list-style-type: none;
+}
+
+.proj-block li {
+    padding: 4px;
+}
+
+.proj-block p {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+}
+
+.api-image {
+    width: 60%;
+}
+
+/* TUTORIALS */
+
+.videos {
+    margin-top: 4%;
+}
+
+.vid-one {
+    display: block;
+    width: 50%;
+    height: 560px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 600px) {
+    .vid-one {
+        height: 50%;
+    }
+}
+
+/* BASEBALL */
+
+.sideways-phone {
+        visibility: hidden;
+}
+
+.base_buttons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search_butt {
+    cursor: pointer;
+    margin-left: 1%;
+    margin-bottom: 10px;
+    padding: 7px 20px 7px 20px;
+    background-color: white;
+    color: red;
+    font-weight: bold;
+}
+
+
+.key {
+    cursor: pointer;
+    margin-right: 1%;
+    margin-bottom: 10px;
+    padding: 7px 20px 7px 20px;
+    background-color: black;
+    color: rgb(0, 255, 34);
+    font-weight: bold;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+.modal-body a{
+    color: blue;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.baseball_table th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+  }
+
+ .yearid {
+    width: 50px;
+ }
+
+.stat_top {
+    background-color: tomato;
+}
+
+.stat_bott {
+    background-color: rgb(0, 255, 34);
+}
+
+.calc_bot {
+    font-weight: bold;
+    background-color: rgb(255, 230, 0);
+}
+
+.cats {
+    font-weight: bold;
+    background-color: tomato;
+}
+
+#hide {
+    visibility: hidden;
+}
+
+@media only screen and (max-width: 500px) {
+    .sideways-phone {
+        visibility: visible;
+        position: absolute;
+        margin-top: 4%;
+        left: 0;
+        width:100%;
+        height: 100%;
+        background-color: white;
+        font-family: bold;
+    }
+}
+
+/* ABOUT ME */
+
+.about_block {
+    margin: auto;
+    width: 50%;
+}
+
+.about_summary {
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 35px;
+    font-size: 20px;
+}
+
+@media only screen and (max-width: 600px) {
+    .about_summary {
+        font-size: 100%;
+    }
+}
+
+.about_cont p{
+    color: white;
+    font-weight: bold;
+    font-size: 23px;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px black;
+}
+
+#tech_list {
+    margin: auto;
+    width: 75%;
+}
+
+#tech_list > li{
+    color: #ff0000;
+    font-weight: bold;
+    text-shadow: 2px 2px black;
+}

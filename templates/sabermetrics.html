@@ -1,0 +1,182 @@
+{% extends "base.html" %}
+{% block body_block%}
+
+
+    <div class="sideways-phone">Please turn your phone sideways or expand your browser.</div>
+    <h1>1871 - 2019 BASEBALL SABERMETRICS</h1>
+
+    <form method="GET" action=".">
+        {% csrf_token %}
+
+        <div class="base_buttons">
+            <button class="search_butt" type="submit" value="SEARCH">SEARCH</button>
+            <button data-modal-target="#modal"  class="key">KEY</button>
+        </div>
+        <div class="modal" id="modal">
+          <div class="modal-header">
+            <div class="title">Key</div>
+            <button data-close-button class="close-button">&times;</button>
+          </div>
+          <div class="modal-body">
+              G - Games <br>
+              AB - At Bats <br>
+              R - Runs <br>
+              H - Runs <br>
+              1B - Singles <br>
+              2B - Doubles <br>
+              3B - Triples <br>
+              HR - Homeruns <br>
+              RBI - Runs Batted In <br>
+              SB - Stolen Bases <br>
+              CS - Caught Stealing <br>
+              BB -  Bases on Balls (Walk) <br>
+              SO -  Strikeouts <br>
+              IBB -  Intentional Bases on Balls <br>
+              HBP - Hit by Pitch <br>
+              SH -  Sacrifice Hits (Bunts)<br>
+              SF - Sacrifice Flies <br>
+              GIDP - Ground into Double Plays <br>
+              OBP - On-Base Percentage <br>
+              SLG - Slugging Percentage <br>
+              OPS - On-Base Plus Slugging <br>
+              MOPS - <a href="http://bostonbaseballhistory.com/ops-is-greatbut-mops-is-tops/" target="_blank">MOPS Calculation</a> <br>
+              WOBA - <a href="http://m.mlb.com/glossary/advanced-stats/weighted-on-base-average" target="_blank">Weighted On-Base Average</a><br>
+              TWOBA - Thieves Weighted On-Base Average (wOBA + stolen bases factored in)<br>
+          </div>
+        </div>
+        <div id="overlay"></div>
+
+        <table class='baseball_table' style="width:100%">
+            <tr class = 'stat_top'>
+              <th>Player<br><input class="player" type="search" name="player" placeholder="Player"/></th>
+              <th>Team<br><input class="team" type="search" name="team" placeholder="Team"/></th>
+              <th>Year<br><input class="yearid" type="search" name="yearid" placeholder="Year"/></th>
+              <th>G</th>
+              <th>AB</th>
+              <th>R</th>
+              <th>H</th>
+              <th>1B</th>
+              <th>2B</th>
+              <th>3B</th>
+              <th>HR</th>
+              <th>RBI</th>
+              <th>SB</th>
+              <th>CS</th>
+              <th>BB</th>
+              <th>SO</th>
+              <th>IBB</th>
+              <th>HBP</th>
+              <th>SH</th>
+              <th>SF</th>
+              <th>GIDP</th>
+              <th>OBP</th>
+              <th>SLG</th>
+              <th>OPS</th>
+              <th>MOPS</th>
+              <th>WOBA</th>
+              <th>TWOBA</th>
+            </tr>
+
+
+            {% for base in base_rec %}
+            <tr class = 'stat_bott'>
+              <td>{{base.player}}</td>
+              <td>{{base.team}}</td>
+              <td>{{base.yearid}}</td>
+              <td>{{base.games}}</td>
+              <td>{{base.ab}}</td>
+              <td>{{base.r}}</td>
+              <td>{{base.h}}</td>
+              <td>{{base.oneb}}</td>
+              <td>{{base.twob}}</td>
+              <td>{{base.threeb}}</td>
+              <td>{{base.hr}}</td>
+              <td>{{base.rbi}}</td>
+              <td>{{base.sb}}</td>
+              <td>{{base.cs}}</td>
+              <td>{{base.bb}}</td>
+              <td>{{base.so}}</td>
+              <td>{{base.ibb}}</td>
+              <td>{{base.hbp}}</td>
+              <td>{{base.sh}}</td>
+              <td>{{base.sf}}</td>
+              <td>{{base.gidp}}</td>
+              <td>{{base.obp}}</td>
+              <td>{{base.slg}}</td>
+              <td>{{base.ops}}</td>
+              <td>{{base.mops}}</td>
+              <td>{{base.woba}}</td>
+              <td>{{base.twoba}}</td>
+            </tr>
+            {% endfor %}
+
+<!--            <tr class='calc_top'>-->
+<!--                <th id='hide'>Player</th>-->
+<!--                <th id='hide'>Team</th>-->
+<!--                <th id='hide'>Year</th>-->
+<!--            </tr>-->
+<!--            <tr class='calc_bot'>-->
+<!--                <td id='hide'>1</td>-->
+<!--                <td id='hide'>2</td>-->
+<!--                <td id='total'><b>TOTAL:</b></td>-->
+<!--                <td>4</td>-->
+<!--                <td>5</td>-->
+<!--                <td>6</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--                <td>8</td>-->
+<!--            </tr>-->
+
+            <tr class='cats'>
+                <td>Player</td>
+                <td>Team</td>
+                <td>Year</td>
+                <td>G</td>
+                <td>AB</td>
+                <td>R</td>
+                <td>H</td>
+                <td>1B</td>
+                <td>2B</td>
+                <td>3B</td>
+                <td>HR</td>
+                <td>RBI</td>
+                <td>SB</td>
+                <td>CS</td>
+                <td>BB</td>
+                <td>SO</td>
+                <td>IBB</td>
+                <td>HBP</td>
+                <td>SH</td>
+                <td>SF</td>
+                <td>GIDP</td>
+                <td>OBP</td>
+                <td>SLG</td>
+                <td>OPS</td>
+                <td>MOPS</td>
+                <td>WOBA</td>
+                <td>TWOBA</td>
+            </tr>
+          </table>
+    </form>
+
+{% endblock %}
+
+</html>

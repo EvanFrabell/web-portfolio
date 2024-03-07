@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block%}
+
+<h1>Projects</h1>
+
+<div class="proj-block">
+    <p>Most of my repositories are private at this time.  Check back in the future for more shared projects.</p>
+
+    {% load static %}
+    <ul>
+        <li><a href="https://github.com/EvanFrabell/pandas-sabermetrics" target="_blank">Python Code for Advanced Baseball Stats Creation</a></li>
+        <li><a href="{% static 'dl/raw_data.zip' %}">Download Raw Baseball Data (.zip)</a></li>
+        <li><a href="{% static 'dl/batter_sabermetrics.csv' %}" download>Download Created Batter Sabermetrics (.csv)</a></li>
+        <li><a href="{% static 'dl/team_sabermetrics.csv' %}" download>Download Created Team Sabermetrics (.csv)</a></li>
+        <li><a href="{% static 'dl/MLBbi.pbix' %}" download>Download MLB Graphs for Power BI (.pbix)</a></li>
+        <li><a href="https://www.projectevan.com/metrics-api/?search=joey%20votto" target="_blank">Sabermetrics API URL</a></li>
+    </ul>
+    <img class="api-image" src="{% static 'images/API.png' %}" alt="API Setup">
+    <ul>
+        <li><a href="https://github.com/EvanFrabell/for-the-gram" target="_blank">Instagram Web Crawler (Python + Selenium)</a></li>
+    </ul>
+</div>
+{% endblock %}
+</html>

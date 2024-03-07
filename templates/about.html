@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% block body_block%}
+
+    <h1>About Me</h1>
+
+    <div class="about_block">
+        <p class="about_summary">
+            I created this portfolio combining professional and recreational projects. I currently reside in Cincinnati, OH and perform a variety of roles in IT consulting - Data analysis and architecture are my technical specialties.
+        </p>
+        <div class="about_cont">
+            <p id="stack_header">
+                SITE'S TECH STACK:
+            </p>
+            <ul id="tech_list">
+                <li>Python Backend</li>
+                    <ul id="inner_list">
+                        <li>Django Framework</li>
+                        <li>SQLite DB - TEST</li>
+                        <li>PostgreSQL DB - PRODUCTION</li>
+                        <li>Selenium Web Crawler</li>
+                    </ul>
+                <li>Web Design</li>
+                    <ul>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                        <li>JavaScript</li>
+                    </ul>
+                <li>Graphic Design</li>
+                    <ul>
+                        <li>Adobe Photoshop</li>
+                        <li>Adobe After Effects</li>
+                    </ul>
+                <li>Data Analysis & Business Intelligence</li>
+                    <ul>
+                        <li>Knime</li>
+                        <li>Power BI</li>
+                        <li>Python Pandas</li>
+                    </ul>
+                <li>Server Architecture</li>
+                    <ul>
+                        <li>PythonAnywhere Cloud Hosting</li>
+                        <li>Azure</li>
+                    </ul>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+</html>

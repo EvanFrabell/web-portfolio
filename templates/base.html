@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+{% load static %}
+
+<!--Inheritance template-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name = "keywords" content = "it consulting, cincinnati, data analysis, sabermetrics, django, technical project management" />
+    <meta name = "description" content = "A collection of an IT consultant's hobbies, projects, and tutorials. Updated" />
+    <meta name = "author" content = "Evan Frabell" />
+    <meta property="og:image" content="https://www.projectevan.com/static/images/blinking.gif" />
+    <title>Evan Frabell's Portfolio</title>
+    <script defer src="{% static 'javascript/javascript.js' %}"></script>
+    <link rel='stylesheet' href="{% static 'css/master.css' %}">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <img class="logo" src="{% static 'images/evanfrabell_logo.png' %}" alt="logo">
+            <ul class="nav_links">
+                <li><a href="{% url 'home'%}">HOME</a></li>
+                <li><a href="{% url 'projects'%}">PROJECTS</a></li>
+                <li><a href="{% url 'tutorials'%}">TUTORIALS</a></li>
+                <li><a href="{% url 'sabermetrics'%}">SABERMETRICS</a></li>
+                <li><a href="{% url 'about'%}">ABOUT</a></li>
+            </ul>
+            <div class="contact">
+                <a href="https://www.linkedin.com/in/evanfrabell" target="_blank">
+                    <img class='linkedin' src="{% static 'images/linkedin.png' %}" alt="linkedin">
+                </a>
+                <a href="https://github.com/EvanFrabell" target="_blank">
+                    <img class='github' src="{% static 'images/github.png' %}" alt="github">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    {% block body_block %}
+    {% endblock %}
+
+
+</body>
+</html>
